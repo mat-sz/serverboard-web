@@ -1,98 +1,23 @@
 import React from 'react';
 import {
-    BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
+    BarChart, Bar, XAxis, Tooltip, ResponsiveContainer
 } from 'recharts';
 import styles from './styles.module.scss';
 
 import DetailsSection from '../DetailsSection';
 import Info from '../Info';
 
-const data = [
-    {
-        name: '2020-01-01', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-02', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-03', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-04', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-05', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-06', uptime: 99, downtime: 1,
-    },
-    {
-        name: '2020-01-07', uptime: 95, downtime: 5,
-    },
-    {
-        name: '2020-01-08', uptime: 90, downtime: 10,
-    },
-    {
-        name: '2020-01-09', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-10', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-11', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-12', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-13', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-14', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-15', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-16', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-17', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-18', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-19', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-20', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-21', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-22', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-23', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-24', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-25', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-26', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-27', uptime: 100, downtime: 0,
-    },
-    {
-        name: '2020-01-28', uptime: 100, downtime: 0,
-    },
+const dates = [
+    '2020-01-01', '2020-01-02', '2020-01-03', '2020-01-04', '2020-01-05', '2020-01-06', '2020-01-07',
+    '2020-01-08', '2020-01-09', '2020-01-10', '2020-01-11', '2020-01-12', '2020-01-13', '2020-01-14',
+    '2020-01-15', '2020-01-16', '2020-01-17', '2020-01-18', '2020-01-19', '2020-01-20', '2020-01-21',
+    '2020-01-22', '2020-01-23', '2020-01-24', '2020-01-25', '2020-01-26', '2020-01-27', '2020-01-28',
 ];
+
+const data = dates.map((date) => {
+    const uptime = Math.floor(Math.random() * 100);
+    return { name: date, uptime: uptime, downtime: 100 - uptime };
+});
 
 const Details: React.FC = () => {
     return (
