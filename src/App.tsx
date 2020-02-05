@@ -3,13 +3,12 @@ import './App.scss';
 
 import Sidebar from './components/Sidebar';
 import Details from './components/Details';
+import Header from './components/Header';
 
 const App: React.FC = () => {
     return (
         <div className="app">
-            <div className="header">
-                <h1 className="logo">Serverboard</h1>
-            </div>
+            <Header />
             <div className="content">
                 <Sidebar />
                 <Details />
