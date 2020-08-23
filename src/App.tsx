@@ -6,15 +6,14 @@ import Details from './components/Details';
 import Header from './components/Header';
 
 const App: React.FC = () => {
-    return (
-        <div className="app">
-            <Header />
-            <div className="content">
-                <Sidebar />
-                <Details />
-            </div>
-        </div>
-    );
+  return (
+    <div className="app">
+      <Header />
+      <div className="content">
+        <Sidebar />
+      </div>
+    </div>
+  );
 };
 
 export default App;
