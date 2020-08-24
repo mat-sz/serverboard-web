@@ -6,7 +6,7 @@ import ServerListItem from '../ServerListItem';
 const ServerList: React.FC = () => {
   return (
     <ul className={styles.list}>
-      <ServerListItem />
+      <ServerListItem server={{ id: 'test' }} />
     </ul>
   );
 };
