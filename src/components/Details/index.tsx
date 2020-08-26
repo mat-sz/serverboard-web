@@ -52,7 +52,7 @@ const Details: React.FC = () => {
         <div style={{ width: '100%', height: '150px' }}>
           <ResponsiveContainer>
             <BarChart data={data}>
-              <XAxis dataKey="name" stroke="#fff" />
+              <XAxis dataKey="name" />
               <Tooltip />
               <Bar dataKey="uptime" stackId="a" fill="#5f5" />
               <Bar dataKey="downtime" stackId="a" fill="#f55" />
