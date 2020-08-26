@@ -1,11 +1,5 @@
 import { Store } from 'redux';
-
-export enum ActionType {}
-
-export interface ActionModel {
-  type: ActionType;
-  value: any;
-}
+import { ActionModel } from '../types/Models';
 
 export interface StateType {}
 
