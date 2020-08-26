@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.scss';
 
-import Sidebar from './components/Sidebar';
-import Details from './components/Details';
 import Header from './components/Header';
+import HomePage from './pages/HomePage';
+import DetailsPage from './pages/DetailsPage';
 
 const App: React.FC = () => {
   return (
@@ -14,10 +14,11 @@ const App: React.FC = () => {
         <div className="content">
           <Switch>
             <Route path="/:id">
-              <Sidebar />
-              <Details />
+              <DetailsPage />
             </Route>
-            <Route path="/"></Route>
+            <Route path="/">
+              <HomePage />
+            </Route>
           </Switch>
         </div>
       </div>
