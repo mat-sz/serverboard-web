@@ -2,11 +2,10 @@ import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 
 import styles from './styles.module.scss';
+import { ServerModel } from '../../types/Models';
 
 export interface ServerListItemProps {
-  server: {
-    id: string;
-  };
+  server: ServerModel;
 }
 
 const ServerListItem: React.FC<ServerListItemProps> = ({ server }) => {
