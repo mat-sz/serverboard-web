@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import styles from './styles.module.scss';
 import { ServerModel } from '../../types/Models';
@@ -13,11 +13,14 @@ const ServerListItem: React.FC<ServerListItemProps> = ({ server }) => {
   const selected = useMemo(() => server.id === id, [server, id]);
 
   return (
-    <li className={styles.item + ' ' + (selected ? styles.selected : '')}>
+    <Link
+      to={'/' + server.id}
+      className={styles.item + ' ' + (selected ? styles.selected : '')}
+    >
       <div className={styles.name}>Server #1</div>
       <div>0.0.0.0</div>
       <div>last seen: never</div>
-    </li>
+    </Link>
   );
 };
 

@@ -9,11 +9,11 @@ const HomePage: React.FC = () => {
   const servers = useSelector((store: StateType) => store.servers);
 
   return (
-    <ul className={styles.list}>
+    <div className={styles.list}>
       {servers.map(server => (
         <ServerListItem server={server} key={server.id} />
       ))}
-    </ul>
+    </div>
   );
 };
 

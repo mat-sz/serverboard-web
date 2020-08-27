@@ -11,16 +11,14 @@ const App: React.FC = () => {
     <Router>
       <div className="app">
         <Header />
-        <div className="content">
-          <Switch>
-            <Route path="/:id">
-              <DetailsPage />
-            </Route>
-            <Route path="/">
-              <HomePage />
-            </Route>
-          </Switch>
-        </div>
+        <Switch>
+          <Route path="/:id">
+            <DetailsPage />
+          </Route>
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
       </div>
     </Router>
   );

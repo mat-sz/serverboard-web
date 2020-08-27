@@ -5,10 +5,10 @@ import Details from '../../components/Details';
 
 const DetailsPage: React.FC = () => {
   return (
-    <>
+    <div className="content">
       <Sidebar />
       <Details />
-    </>
+    </div>
   );
 };
 
