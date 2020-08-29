@@ -6,7 +6,10 @@ export interface StateType {
 }
 
 let initialState: StateType = {
-  servers: [{ id: 'test1' }, { id: 'test2' }],
+  servers: [
+    { id: 'test1', name: 'Server #1', ip: '127.0.0.1' },
+    { id: 'test2', name: 'Server #2', ip: '127.0.0.1' },
+  ],
 };
 
 export type StoreType = Store<StateType, ActionModel>;
