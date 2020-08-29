@@ -17,8 +17,8 @@ const ServerListItem: React.FC<ServerListItemProps> = ({ server }) => {
       to={'/' + server.id}
       className={styles.item + ' ' + (selected ? styles.selected : '')}
     >
-      <div className={styles.name}>Server #1</div>
-      <div>0.0.0.0</div>
+      <div className={styles.name}>{server.name}</div>
+      <div>{server.ip}</div>
       <div>last seen: never</div>
     </Link>
   );
