@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { BarChart, Bar, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import styles from './styles.module.scss';
 
 import DetailsSection from '../DetailsSection';
 import Info from '../Info';
+import { StateType } from '../../reducers';
 
 const dates = [
   '2020-01-01',
@@ -42,9 +45,20 @@ const data = dates.map(date => {
 });
 
 const Details: React.FC = () => {
+  const { id } = useParams<{ id?: string }>();
+  const servers = useSelector((store: StateType) => store.servers);
+  const currentServer = useMemo(
+    () => servers.find(server => server.id === id),
+    [servers, id]
+  );
+
+  if (!currentServer) {
+    return <div className={styles.details}>Not found.</div>;
+  }
+
   return (
     <div className={styles.details}>
-      <h2>Server #1</h2>
+      <h2>{currentServer.name}</h2>
       <DetailsSection title="Info">
         <Info />
       </DetailsSection>
