@@ -50,7 +50,7 @@ const Details: React.FC = () => {
       </DetailsSection>
       <DetailsSection title="Uptime">
         <div style={{ width: '100%', height: '150px' }}>
-          <ResponsiveContainer>
+          <ResponsiveContainer width="99%">
             <BarChart data={data}>
               <XAxis dataKey="name" />
               <Tooltip />

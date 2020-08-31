@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  overflow: hidden;
 
   & > div {
     padding: 1rem;
